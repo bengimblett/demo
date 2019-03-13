@@ -26,7 +26,7 @@
   },
   "variables": {
     "webAppPortalName": "parameters('webAppName')]",
-    "appServicePlanName": "[concat('parameters('webAppName'), '-wap')]"
+    "appServicePlanName": "[concat(parameters('webAppName'), '-wap')]"
   },
   "resources": [
     {
