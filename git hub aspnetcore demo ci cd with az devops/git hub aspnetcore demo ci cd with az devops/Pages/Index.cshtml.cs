@@ -11,7 +11,7 @@ namespace git_hub_aspnetcore_demo_ci_cd_with_az_devops.Pages
     {
         public void OnGet()
         {
-          //
+          // comment
         }
     }
 }
