@@ -10,6 +10,7 @@ using Microsoft.Extensions.Logging;
 
 namespace git_hub_aspnetcore_demo_ci_cd_with_az_devops
 {
+    // hello
     public class Program
     {
         public static void Main(string[] args)
