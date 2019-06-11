@@ -48,7 +48,9 @@
         "name": "[parameters('storageAccountType')]"
       },
       "kind": "StorageV2",
-      "properties": {},
+      "properties": {
+          "accessTier": "Hot"
+      },
       "resources": [
         {
             "name": "[concat('default/', parameters('containerName'))]",
