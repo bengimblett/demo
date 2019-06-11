@@ -27,7 +27,13 @@
       "metadata": {
         "description": "Name of storage account"
       }
-    }
+    },
+    "containerName": {
+            "type": "string",
+            "metadata": {
+                "description": "Specifies the name of the blob container."
+            }
+        },
   },
   "variables": {
   
@@ -42,7 +48,17 @@
         "name": "[parameters('storageAccountType')]"
       },
       "kind": "StorageV2",
-      "properties": {}
+      "properties": {},
+      "resources": [
+        {
+            "name": "[concat('default/', parameters('containerName'))]",
+            "type": "blobServices/containers",
+            "apiVersion": "2018-07-01",
+            "dependsOn": [
+                "[parameters('storageAccountName')]"
+            ]
+        }
+      ]
     }
   ],
   "outputs": {
