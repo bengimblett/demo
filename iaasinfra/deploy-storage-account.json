@@ -40,13 +40,15 @@
 
     },
     "variables": {
-        "accountSasProperties": 
+        "accountSasProperties":
         {
-            "signedServices": "b",
-            "signedPermission": "rw",
-            "signedExpiry": "[parameters('signedExpiry')]",
-            "signedResourceTypes": "o"
-        }
+            "defaultValue":        {
+                "signedServices": "b",
+                "signedPermission": "rw",
+                "signedExpiry": "[parameters('signedExpiry')]",
+                "signedResourceTypes": "o"
+            }
+        } 
     },
     "resources": [
         {
@@ -76,7 +78,7 @@
     "outputs": {
         "storageAccountSasToken": {
             "type": "string",
-            "value": "[listAccountSas(parameters('StorageAccountName'), '2018-07-01', variables('accountSasProperties')).accountSasToken]"
+            "value": "[listAccountSas(parameters('StorageAccountName'), '2018-07-01', variables('accountSasProperties').defaultValue).accountSasToken]"
         }
     }
 }
