@@ -34,17 +34,21 @@
                 "description": "Specifies the name of the blob container."
             }
         },
-        "accountSasProperties": {
-            "type": "object",
-            "defaultValue": {
+        "signedExpiry": {
+            "type": "string"
+        }
+
+    },
+    "variables": {
+        "accountSasProperties": [ 
+            {
                 "signedServices": "b",
                 "signedPermission": "rw",
-                "signedExpiry": "2019-03-01T00:00:01Z",
+                "signedExpiry": "[parameters('signedExpiry')]",
                 "signedResourceTypes": "o"
-            }
-        }
+           }
+        ]
     },
-    "variables": {},
     "resources": [
         {
             "type": "Microsoft.Storage/storageAccounts",
@@ -73,7 +77,7 @@
     "outputs": {
         "storageAccountSasToken": {
             "type": "string",
-            "value": "[listAccountSas(parameters('StorageAccountName'), '2018-07-01', parameters('accountSasProperties')).accountSasToken]"
+            "value": "[listAccountSas(parameters('StorageAccountName'), '2018-07-01', variables('accountSasProperties')).accountSasToken]"
         }
     }
 }
