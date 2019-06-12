@@ -40,14 +40,13 @@
 
     },
     "variables": {
-        "accountSasProperties": [ 
-            {
-                "signedServices": "b",
-                "signedPermission": "rw",
-                "signedExpiry": "[parameters('signedExpiry')]",
-                "signedResourceTypes": "o"
-           }
-        ]
+        "accountSasProperties": 
+        {
+            "signedServices": "b",
+            "signedPermission": "rw",
+            "signedExpiry": "[parameters('signedExpiry')]",
+            "signedResourceTypes": "o"
+        }
     },
     "resources": [
         {
