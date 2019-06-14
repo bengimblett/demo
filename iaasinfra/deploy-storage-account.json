@@ -76,9 +76,5 @@
         }
     ],
     "outputs": {
-        "storageAccountSasToken": {
-            "type": "string",
-            "value": "[listAccountSas(parameters('StorageAccountName'), '2018-07-01', variables('accountSasProperties').defaultValue).accountSasToken]"
-        }
     }
 }
